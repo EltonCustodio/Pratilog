@@ -1,0 +1,422 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "Controle.h"
+
+//---------------------------------------------------------------------------
+
+#pragma package(smart_init)
+
+Controle::Controle()
+{
+   for (int i=0; i<4; ++i)
+   {
+      for(int j=0; j<4;++j)
+      {
+         SolucaoUmDuasVariaveis[i][j] = NULL;
+      }
+   }
+
+   for (int i=0; i<9; ++i)
+   {
+      for(int j=0; j<4;++j)
+      {
+         SolucaoDoisDuasVariaveis[i][j] = NULL;
+      }
+   }
+
+   for (int i=0; i<7; ++i)
+   {
+      for(int j=0; j<4;++j)
+      {
+         SolucaoTresDuasVariaveis[i][j] = NULL;
+      }
+   }
+
+   for (int i=0; i<6; ++i)
+   {
+      for(int j=0; j<8;++j)
+      {
+         SolucaoUmTresVariaveis[i][j] = NULL;
+      }
+   }
+
+   for (int i=0; i<8; ++i)
+   {
+      for(int j=0; j<8;++j)
+      {
+         SolucaoDoisTresVariaveis[i][j] = NULL;
+      }
+   }
+
+   for (int i=0; i<8; ++i)
+   {
+      for(int j=0; j<8;++j)
+      {
+         SolucaoTresTresVariaveis[i][j] = NULL;
+      }
+   }
+
+   for (int i=0; i<16; ++i)
+   {
+      for(int j=0; j<16;++j)
+      {
+         SolucaoUmQuatroVariaveis[i][j];
+      }
+   }
+
+   for (int i=0; i<13; ++i)
+   {
+      for(int j=0; j<16;++j)
+      {
+         SolucaoDoisQuatroVariaveis[i][j];
+      }
+   }
+
+   for (int i=0; i<14; ++i)
+   {
+      for(int j=0; j<16;++j)
+      {
+         SolucaoTresQuatroVariaveis[i][j];
+      }
+   }
+}
+
+Controle::~Controle()
+{
+}
+
+void Controle::ativar(void)
+{
+   TFormEscolha *pFe = new TFormEscolha(0);
+   TFormMenu *pFm = new TFormMenu(0);
+   TFormExpressaoDuasVariaveis *pFeX = new TFormExpressao1(0);
+   TFormExpressaoTresVariaveis *pFeXtres = new TFormExpressaoTresVariaveis(0);
+   TFormExpressaoQuatroVariaveis *pFeXquatro = new TFormExpressaoQuatroVariaveis(0);
+   TFormExpUmDuasVariaveis *pEuDv = new TFormExpUmDuasVariaveis(0);
+   TFormExpDoisDuasVariaveis *pEdDv = new TFormExpDoisDuasVariaveis(0);
+   TFormExpTresDuasVariaveis *pEtDv = new TFormExpTresDuasVariaveis(0);
+   TFormExpUmTresVariaveis *pEuTv = new TFormExpUmTresVariaveis(0);
+   TFormExpDoisTresVariaveis *pEdTv = new TFormExpDoisTresVariaveis(0);
+   TFormExpTresTresVariaveis *pEtTv = new TFormExpTresTresVariaveis(0);
+   TFormExpUmQuatroVariaveis *pEuQv = new TFormExpUmQuatroVariaveis(0);
+   TFormExpDoisQuatroVariaveis *pEdQv = new TFormExpDoisQuatroVariaveis(0);
+   TFormExpTresQuatroVariaveis *pEtQv = new TFormExpTresQuatroVariaveis(0);
+   Solucao *sOl = new Solucao();
+
+
+   int Status,Expressao,Variaveis;
+
+
+   try
+   {
+
+      while(true)
+      {
+
+         pFm->ShowModal();
+         if (pFm->getStatus()==2)
+         {
+
+            pFe->ShowModal();
+            Variaveis = pFe->getVariaveis();
+            if (pFe->getStatus()==5 && pFe->getVariaveis()==2)
+            {
+
+               pFeX->ShowModal();
+
+               if (Status > 0)
+               {
+                  Expressao = pFeX->getExpressao();
+               }
+
+               if (pFeX->getStatus()==4 && Expressao == 1)
+               {
+                  pEuDv->ShowModal();
+                  if (pEuDv->getStatus()==1 && Variaveis ==2 && Expressao ==1)
+                  {
+                     sOl->solucaoDuasVariaveis(Expressao);
+                     sOl->getSolucaoUmDuasVariaveis(SolucaoUmDuasVariaveis);
+                     pEuDv->setSolucaoUmDuasVariaveis(SolucaoUmDuasVariaveis);
+                     pEuDv->mostrarStringGrid();
+                     pEuDv->ShowModal();
+
+                  }
+                  if (pEuDv->getStatus() == 3 && Variaveis == 2 && Expressao ==1)
+                   {
+                     while(pEuDv->getStatus()==3)
+                     {
+                        pEuDv->verificar(SolucaoUmDuasVariaveis);
+                        pEuDv->mostrarStringGrid();
+                        pEuDv->ShowModal();
+                     }
+                   }else if(pEuDv->getStatus()==2)
+                    {
+                      pFm->ShowModal();
+                    }
+
+                }else if (pFeX->getStatus()==4 && Expressao == 2)
+                  {
+                        pEdDv->ShowModal();
+
+                        if (pEdDv->getStatus()==1 && Variaveis ==2 && Expressao ==2)
+                        {
+                           while (pEdDv->getStatus() == 1)
+                           {
+                              sOl->solucaoDuasVariaveis(Expressao);
+                              sOl->getSolucaoDoisDuasVariaveis(SolucaoDoisDuasVariaveis);
+                              pEdDv->setSolucaoDoisDuasVariaveis(SolucaoDoisDuasVariaveis);
+                              pEdDv->mostrarStringGrid();
+                              pEdDv->ShowModal();
+                           }
+                        }
+                        if (pEdDv->getStatus() == 3 && Variaveis == 2 && Expressao ==2)
+                        {
+                           while(pEdDv->getStatus()==3)
+                           {
+                              pEdDv->verificar(SolucaoDoisDuasVariaveis);
+                              pEdDv->mostrarStringGrid();
+                              pEdDv->ShowModal();
+                           }
+                        }else if(pEdDv->getStatus()==2)
+                         {
+                           pFm->ShowModal();
+                         }
+                  }else if (pFeX->getStatus()==4 && Expressao == 3)
+                   {
+                        pEtDv->ShowModal();
+
+                        if (pEtDv->getStatus()==1 && Variaveis ==2 && Expressao ==3)
+                        {
+                           while (pEtDv->getStatus() == 1)
+                           {
+                              sOl->solucaoDuasVariaveis(Expressao);
+                              sOl->getSolucaoTresDuasVariaveis(SolucaoTresDuasVariaveis);
+                              pEtDv->setSolucaoTresDuasVariaveis(SolucaoTresDuasVariaveis);
+                              pEtDv->mostrarStringGrid();
+                              pEtDv->ShowModal();
+                           }
+                        }
+                         if (pEtDv->getStatus() == 3 && Variaveis == 2 && Expressao ==3)
+                        {
+                           while(pEtDv->getStatus()==3)
+                           {
+                              pEtDv->verificar(SolucaoTresDuasVariaveis);
+                              pEtDv->mostrarStringGrid();
+                              pEtDv->ShowModal();
+                           }
+
+                        }else if(pEtDv->getStatus()==2)
+                         {
+                           pFm->ShowModal();
+                         }
+                   }else if (pFeX->getStatus()==5)
+                    {
+                        pFm->ShowModal();
+                    }
+
+            }else if (pFe->getStatus()==5 && pFe->getVariaveis()==3) //INICIO 3 VARIAVEIS
+             {
+               pFeXtres->ShowModal();
+
+               if(Status > 0)
+               {
+                  Expressao = pFeXtres->getExpressao();
+               }
+
+               if (pFeXtres->getStatus()==4 && Expressao == 1)
+               {
+                  pEuTv->ShowModal();
+
+                  if (pEuTv->getStatus()==1 && Variaveis==3)
+                  {
+                     while(pEuTv->getStatus()==1)
+                     {
+                        sOl->solucaoTresVariaveis(Expressao);
+                        sOl->getSolucaoUmTresVariaveis(SolucaoUmTresVariaveis);
+                        pEuTv->setSolucaoUmTresVariaveis(SolucaoUmTresVariaveis);
+                        pEuTv->mostrarStringGrid();
+                        pEuTv->ShowModal();
+                     }
+                  }
+                  if (pEuTv->getStatus() == 3 && Variaveis == 3 && Expressao ==1)
+                  {
+                     while(pEuTv->getStatus()==3)
+                     {
+                        pEuTv->verificar(SolucaoUmTresVariaveis);
+                        pEuTv->mostrarStringGrid();
+                        pEuTv->ShowModal();
+                     }
+                  }
+                  else if (pEuTv->getStatus()== 2)
+                   {
+                     pFm->ShowModal();
+                   }
+               }else if (pFeXtres->getStatus()==4 && Expressao == 2)
+                {
+                     pEdTv->ShowModal();
+
+                     if (pEdTv->getStatus()==1 && Variaveis ==3 && Expressao ==2)
+                     {
+                        while (pEdTv->getStatus() == 1)
+                        {
+                           sOl->solucaoTresVariaveis(Expressao);
+                           sOl->getSolucaoDoisTresVariaveis(SolucaoDoisTresVariaveis);
+                           pEdTv->setSolucaoDoisTresVariaveis(SolucaoDoisTresVariaveis);
+                           pEdTv->mostrarStringGrid();
+                           pEdTv->ShowModal();
+                        }
+                      }
+                         if (pEdTv->getStatus() == 3 && Variaveis == 3 && Expressao ==2)
+                         {
+                           while(pEdTv->getStatus()==3)
+                           {
+                              pEdTv->verificar(SolucaoDoisTresVariaveis);
+                              pEdTv->mostrarStringGrid();
+                              pEdTv->ShowModal();
+                           }
+
+                         }else if(pEdTv->getStatus()==2)
+                          {
+                            pFm->ShowModal();
+                          }
+                }else if (pFeXtres->getStatus()==4 && Expressao == 3)
+                 {
+                     pEtTv->ShowModal();
+
+                     if (pEtTv->getStatus()==1 && Variaveis ==3 && Expressao ==3)
+                     {
+                        while (pEtTv->getStatus() == 1)
+                        {
+                           sOl->solucaoTresVariaveis(Expressao);
+                           sOl->getSolucaoTresTresVariaveis(SolucaoTresTresVariaveis);
+                           pEtTv->setSolucaoTresTresVariaveis(SolucaoTresTresVariaveis);
+                           pEtTv->mostrarStringGrid();
+                           pEtTv->ShowModal();
+                        }
+                      }
+                         if (pEtTv->getStatus() == 3 && Variaveis == 3 && Expressao ==3)
+                         {
+                           while(pEtTv->getStatus()==3)
+                           {
+                              pEtTv->verificar(SolucaoTresTresVariaveis);
+                              pEtTv->mostrarStringGrid();
+                              pEtTv->ShowModal();
+                           }
+
+                         }else if(pEtTv->getStatus()==2)
+                          {
+                            pFm->ShowModal();
+                          }
+
+             }else if (pFeXtres->getStatus()==5)
+              {
+                pFm->ShowModal();
+              }
+             }else if (pFe->getStatus()==5 && pFe->getVariaveis()==4)
+              {
+                  pFeXquatro->ShowModal();
+
+                  if(Status > 0)
+               {
+                  Expressao = pFeXquatro->getExpressao();
+               }
+
+               if (pFeXquatro->getStatus()==4 && Expressao == 1)
+               {
+                  pEuQv->ShowModal();
+
+                  if (pEuQv->getStatus()==1 && Variaveis==4)
+                  {
+                     sOl->solucaoQuatroVariaveis(Expressao);
+                     sOl->getSolucaoUmQuatroVariaveis(SolucaoUmQuatroVariaveis);
+                     pEuQv->setSolucaoUmQuatroVariaveis(SolucaoUmQuatroVariaveis);
+                     pEuQv->mostrarStringGrig();
+                     pEuQv->ShowModal();
+                  }else if (pEuQv->getStatus()== 2)
+                   {
+                     pFm->ShowModal();
+                   }
+               }else if (pFeXquatro->getStatus()==4 && Expressao == 2)
+                {
+                     pEdQv->ShowModal();
+
+                     if (pEdQv->getStatus()==1 && Variaveis ==4 && Expressao ==2)
+                     {
+                        while (pEdQv->getStatus() == 1)
+                        {
+                           sOl->solucaoQuatroVariaveis(Expressao);
+                           sOl->getSolucaoDoisQuatroVariaveis(SolucaoDoisQuatroVariaveis);
+                           pEdQv->setSolucaoDoisQuatroVariaveis(SolucaoDoisQuatroVariaveis);
+                           pEdQv->mostrarStringGrid();
+                           pEdQv->ShowModal();
+                        }
+                      }
+                         if (pEdQv->getStatus() == 3 && Variaveis == 4 && Expressao ==2)
+                         {
+                           while(pEdQv->getStatus()==3)
+                           {
+                              pEdQv->verificar(SolucaoDoisQuatroVariaveis);
+                              pEdQv->mostrarStringGrid();
+                              pEdQv->ShowModal();
+                           }
+
+                         }else if(pEdQv->getStatus()==2)
+                          {
+                            pFm->ShowModal();
+                          }
+                }else if (pFeXquatro->getStatus()==4 && Expressao == 3)
+                 {
+                     pEtQv->ShowModal();
+
+                     if (pEtQv->getStatus()==1 && Variaveis ==4 && Expressao ==3)
+                     {
+                        while (pEtQv->getStatus() == 1)
+                        {
+                           sOl->solucaoQuatroVariaveis(Expressao);
+                           sOl->getSolucaoTresQuatroVariaveis(SolucaoTresQuatroVariaveis);
+                           pEtQv->setSolucaoTresQuatroVariaveis(SolucaoTresQuatroVariaveis);
+                           pEtQv->mostrarStringGrid();
+                           pEtQv->ShowModal();
+                        }
+                      }
+                         if (pEtQv->getStatus() == 3 && Variaveis == 4 && Expressao ==3)
+                         {
+                           while(pEtQv->getStatus()==3)
+                           {
+                              pEtQv->verificar(SolucaoTresQuatroVariaveis);
+                              pEtQv->mostrarStringGrid();
+                              pEtQv->ShowModal();
+                           }
+
+                         }else if(pEtQv->getStatus()==2)
+                          {
+                            pFm->ShowModal();
+                          }
+                 }else if (pFeXquatro->getStatus()==5)
+                  {
+                     pFm->ShowModal();
+                  }
+            }
+         }else if (pFm->getStatus() == 3)
+          {
+             pFm->Visible = false;
+             pFe->Visible = false;
+             break;
+          }
+
+      }
+   }
+   __finally
+   {
+      if(pFm != NULL)
+      {
+         delete pFm;
+      }else if (pFe != NULL)
+       {
+          delete pFe;
+       }
+   }
+}

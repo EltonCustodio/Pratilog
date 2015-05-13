@@ -1,0 +1,43 @@
+//---------------------------------------------------------------------------
+
+#ifndef FormularioExpDoisTresVariaveisH
+#define FormularioExpDoisTresVariaveisH
+//---------------------------------------------------------------------------
+#include <Classes.hpp>
+#include <Controls.hpp>
+#include <StdCtrls.hpp>
+#include <Forms.hpp>
+#include <ExtCtrls.hpp>
+#include <Grids.hpp>
+#include <jpeg.hpp>
+//---------------------------------------------------------------------------
+class TFormExpDoisTresVariaveis : public TForm
+{
+__published:	// IDE-managed Components
+   TPanel *PanelExpDoisTresVar;
+   TStringGrid *StringGridExpDoisTresVariaveis;
+   TButton *ButtonComecar;
+   TButton *ButtonVerificar;
+   TButton *ButtonPraticar;
+   TImage *ImageExpDoisTresVariaveis;
+   void __fastcall ButtonComecarClick(TObject *Sender);
+   void __fastcall ButtonVerificarClick(TObject *Sender);
+   void __fastcall ButtonPraticarClick(TObject *Sender);
+private:	// User declarations
+   int Status;
+   int SolucaoDoisTresVariaveis[8][8];
+public:		// User declarations
+   __fastcall TFormExpDoisTresVariaveis(TComponent* Owner);
+   void mostrarStringGrid(void);
+   void setSolucaoDoisTresVariaveis(int[8][8]);
+   void verificar(int[8][8]);
+
+   int getStatus(void)
+   {
+      return Status;
+   }
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TFormExpDoisTresVariaveis *FormExpDoisTresVariaveis;
+//---------------------------------------------------------------------------
+#endif

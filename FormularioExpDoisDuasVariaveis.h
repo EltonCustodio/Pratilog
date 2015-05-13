@@ -1,0 +1,43 @@
+//---------------------------------------------------------------------------
+
+#ifndef FormularioExpDoisDuasVariaveisH
+#define FormularioExpDoisDuasVariaveisH
+//---------------------------------------------------------------------------
+#include <Classes.hpp>
+#include <Controls.hpp>
+#include <StdCtrls.hpp>
+#include <Forms.hpp>
+#include <ExtCtrls.hpp>
+#include <Grids.hpp>
+#include <jpeg.hpp>
+//---------------------------------------------------------------------------
+class TFormExpDoisDuasVariaveis : public TForm
+{
+__published:	// IDE-managed Components
+   TPanel *PanelExpDoisDuasVar;
+   TImage *ImageExpDoisDuasVar;
+   TStringGrid *StringGridExpDoisDuasVariaveis;
+   TButton *ButtonComecar;
+   TButton *ButtonVerificar;
+   TButton *ButtonPraticar;
+   void __fastcall ButtonComecarClick(TObject *Sender);
+   void __fastcall ButtonVerificarClick(TObject *Sender);
+   void __fastcall ButtonPraticarClick(TObject *Sender);
+private:	// User declarations
+   int Status;
+   int SolucaoDoisDuasVariaveis[9][4];
+
+public:		// User declarations
+   __fastcall TFormExpDoisDuasVariaveis(TComponent* Owner);
+   void setSolucaoDoisDuasVariaveis(int[9][4]);
+   void verificar(int[9][4]);
+   void mostrarStringGrid(void);
+   int getStatus(void)
+   {
+      return Status;
+   }
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TFormExpDoisDuasVariaveis *FormExpDoisDuasVariaveis;
+//---------------------------------------------------------------------------
+#endif

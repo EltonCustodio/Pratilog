@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="ProjPratLog.exe"/>
+    <OBJFILES value="ProjPratLog.obj Controle.obj FormularioMenu.obj 
+      FormularioExpUmDuasVariaveis.obj Solucao.obj Resolve.obj Estrutura.obj 
+      FormularioEscolha.obj FormularioExpressao.obj 
+      FormularioExpUmTresVariaveis.obj FormularioExpressaoTresVariaveis.obj 
+      FormularioExpressaoQuatroVariaveis.obj FormularioExpUmQuatroVariaveis.obj 
+      FormularioExpDoisDuasVariaveis.obj FormularioExpTresDuasVariaveis.obj 
+      FormularioExpDoisTresVariaveis.obj FormularioExpTresTresVariaveis.obj 
+      FormularioExpDoisQuatroVariaveis.obj FormularioExpTresQuatroVariaveis.obj"/>
+    <RESFILES value="ProjPratLog.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) FormularioMenu.dfm FormularioExpUmDuasVariaveis.dfm 
+      FormularioEscolha.dfm FormularioExpressao.dfm 
+      FormularioExpUmTresVariaveis.dfm FormularioExpressaoTresVariaveis.dfm 
+      FormularioExpressaoQuatroVariaveis.dfm FormularioExpUmQuatroVariaveis.dfm 
+      FormularioExpDoisDuasVariaveis.dfm FormularioExpTresDuasVariaveis.dfm 
+      FormularioExpDoisTresVariaveis.dfm FormularioExpTresTresVariaveis.dfm 
+      FormularioExpDoisQuatroVariaveis.dfm FormularioExpTresQuatroVariaveis.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value=""/>
+    <SPARELIBS value="rtl.lib vcl.lib"/>
+    <PACKAGES value="rtl.bpi vcl.bpi vclx.bpi bcbsmp.bpi dbrtl.bpi vcldb.bpi adortl.bpi 
+      ibsmp.bpi bdertl.bpi vcldbx.bpi qrpt.bpi teeui.bpi teedb.bpi tee.bpi 
+      dss.bpi teeqr.bpi ibxpress.bpi dsnap.bpi vclie.bpi inetdb.bpi inet.bpi 
+      nmfast.bpi webdsnap.bpi bcbie.bpi dclocx.bpi bcb2kaxserver.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value="_DEBUG"/>
+    <SYSDEFINES value="NO_STRICT;USEPACKAGES"/>
+    <MAINSOURCE value="ProjPratLog.cpp"/>
+    <INCLUDEPATH value="\\192.168.0.41\Users\Guilherme\Documents\PratLogGUI;..\PratLog\FAITEC;&quot;C:\Program Files (x86)\Borland\CBuilder5\Projects&quot;;..\..\MatrizGUI;$(BCB)\include;$(BCB)\include\vcl"/>
+    <LIBPATH value="\\192.168.0.41\Users\Guilherme\Documents\PratLogGUI;..\PratLog\FAITEC;&quot;C:\Program Files (x86)\Borland\CBuilder5\Projects&quot;;..\..\MatrizGUI;$(BCB)\lib\obj;$(BCB)\lib"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-src_suffix cpp -D_DEBUG 
+      -I\\192.168.0.41\Users\Guilherme\Documents\PratLogGUI -I..\PratLog\FAITEC 
+      -I&quot;C:\Program Files (x86)\Borland\CBuilder5\Projects&quot; -I..\..\MatrizGUI 
+      -I$(BCB)\include -I$(BCB)\include\vcl -boa"/>
+    <CFLAG1 value="-Od -H=c:\PROGRA~2\borland\CBUILD~1\lib\vcl60.csm -Hc -Vx -Ve -fp -X- -r- 
+      -a8 -5 -b- -k -y -v -vi- -c -tW -tWM"/>
+    <PFLAGS value="-$YD -$W -$O- -$A8 -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zd"/>
+    <LFLAGS value="-D&quot;&quot; -aa -Tpe -x -Gn"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0w32.obj $(PACKAGES) sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mt.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="ProjPratLog.cpp" FORMNAME="" UNITNAME="ProjPratLog" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="ProjPratLog.res" FORMNAME="" UNITNAME="ProjPratLog" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Controle.cpp" FORMNAME="" UNITNAME="Controle" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="FormularioMenu.cpp" FORMNAME="FormMenu" UNITNAME="FormularioMenu" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="FormularioExpUmDuasVariaveis.cpp" FORMNAME="FormExpUmDuasVariaveis" UNITNAME="FormularioExpUmDuasVariaveis" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Solucao.cpp" FORMNAME="" UNITNAME="Solucao" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Resolve.cpp" FORMNAME="" UNITNAME="Resolve" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Estrutura.cpp" FORMNAME="" UNITNAME="Estrutura" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="FormularioEscolha.cpp" FORMNAME="FormEscolha" UNITNAME="FormularioEscolha" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="FormularioExpressao.cpp" FORMNAME="FormExpressaoDuasVariaveis" UNITNAME="FormularioExpressao" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="FormularioExpUmTresVariaveis.cpp" FORMNAME="FormExpUmTresVariaveis" UNITNAME="FormularioExpUmTresVariaveis" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="FormularioExpressaoTresVariaveis.cpp" FORMNAME="FormExpressaoTresVariaveis" UNITNAME="FormularioExpressaoTresVariaveis" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="FormularioExpressaoQuatroVariaveis.cpp" FORMNAME="FormExpressaoQuatroVariaveis" UNITNAME="FormularioExpressaoQuatroVariaveis" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="FormularioExpUmQuatroVariaveis.cpp" FORMNAME="FormExpUmQuatroVariaveis" UNITNAME="FormularioExpUmQuatroVariaveis" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="FormularioExpDoisDuasVariaveis.cpp" FORMNAME="FormExpDoisDuasVariaveis" UNITNAME="FormularioExpDoisDuasVariaveis" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="FormularioExpTresDuasVariaveis.cpp" FORMNAME="FormExpTresDuasVariaveis" UNITNAME="FormularioExpTresDuasVariaveis" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="FormularioExpDoisTresVariaveis.cpp" FORMNAME="FormExpDoisTresVariaveis" UNITNAME="FormularioExpDoisTresVariaveis" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="FormularioExpTresTresVariaveis.cpp" FORMNAME="FormExpTresTresVariaveis" UNITNAME="FormularioExpTresTresVariaveis" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="FormularioExpDoisQuatroVariaveis.cpp" FORMNAME="FormExpDoisQuatroVariaveis" UNITNAME="FormularioExpDoisQuatroVariaveis" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="FormularioExpTresQuatroVariaveis.cpp" FORMNAME="FormExpTresQuatroVariaveis" UNITNAME="FormularioExpTresQuatroVariaveis" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1046
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[HistoryLists\hlIncludePath]
+Count=1
+Item0=$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=1
+Item0=$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=1
+Item0=_DEBUG
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=1
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+  </IDEOPTIONS>
+</PROJECT>

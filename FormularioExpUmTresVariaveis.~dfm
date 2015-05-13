@@ -1,0 +1,86 @@
+object FormExpUmTresVariaveis: TFormExpUmTresVariaveis
+  Left = 192
+  Top = 116
+  Width = 625
+  Height = 489
+  HorzScrollBar.Visible = False
+  VertScrollBar.Visible = False
+  Caption = 'PratLog'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object PanelExpUmTresVar: TPanel
+    Left = 0
+    Top = 0
+    Width = 1369
+    Height = 705
+    TabOrder = 0
+    object StringGridExpUmTresVariaveis: TStringGrid
+      Left = 56
+      Top = 32
+      Width = 465
+      Height = 241
+      ColCount = 7
+      RowCount = 9
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing]
+      ParentFont = False
+      TabOrder = 0
+    end
+    object ButtonPraticar: TButton
+      Left = 248
+      Top = 352
+      Width = 129
+      Height = 25
+      Caption = 'Praticar Novamente'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 1
+      OnClick = ButtonPraticarClick
+    end
+    object ButtonVerificar: TButton
+      Left = 344
+      Top = 312
+      Width = 89
+      Height = 25
+      Caption = 'Verificar'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 2
+      OnClick = ButtonVerificarClick
+    end
+    object ButtonComecar: TButton
+      Left = 200
+      Top = 312
+      Width = 81
+      Height = 25
+      Caption = 'Começar'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 3
+      OnClick = ButtonComecarClick
+    end
+  end
+end

@@ -1,0 +1,56 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "FormularioExpressaoTresVariaveis.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TFormExpressaoTresVariaveis *FormExpressaoTresVariaveis;
+//---------------------------------------------------------------------------
+__fastcall TFormExpressaoTresVariaveis::TFormExpressaoTresVariaveis(TComponent* Owner)
+   : TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TFormExpressaoTresVariaveis::RadioButtonExpUmTresVarClick(
+      TObject *Sender)
+{
+   Expressao = 1;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormExpressaoTresVariaveis::ButtonPraticarClick(
+      TObject *Sender)
+{
+   Status = 4;
+   Close();
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TFormExpressaoTresVariaveis::RadioButtonExpDoisTresVarClick(
+      TObject *Sender)
+{
+   Expressao = 2;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormExpressaoTresVariaveis::RadioButtonExpTresTresVarClick(
+      TObject *Sender)
+{
+   Expressao = 3;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormExpressaoTresVariaveis::ButtonVoltarClick(
+      TObject *Sender)
+{
+   Status = 5;
+   Close();
+}
+//---------------------------------------------------------------------------
+

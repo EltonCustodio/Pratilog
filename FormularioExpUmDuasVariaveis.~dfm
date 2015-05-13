@@ -1,0 +1,78 @@
+object FormExpUmDuasVariaveis: TFormExpUmDuasVariaveis
+  Left = 404
+  Top = 150
+  Width = 498
+  Height = 391
+  HorzScrollBar.Visible = False
+  VertScrollBar.Visible = False
+  Caption = 'PratLog'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object PanelExpUmDuasVar: TPanel
+    Left = -32
+    Top = 0
+    Width = 1401
+    Height = 705
+    TabOrder = 0
+    object ButtonPraticar: TButton
+      Left = 200
+      Top = 256
+      Width = 129
+      Height = 25
+      Caption = 'Praticar Novamente'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 0
+      OnClick = ButtonPraticarClick
+    end
+    object ButtonComecar: TButton
+      Left = 136
+      Top = 208
+      Width = 75
+      Height = 25
+      Caption = 'Começar'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 1
+      OnClick = ButtonComecarClick
+    end
+    object StringGridExpUmDuasVariaveis: TStringGrid
+      Left = 88
+      Top = 32
+      Width = 337
+      Height = 137
+      Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goEditing]
+      TabOrder = 2
+    end
+    object ButtonVerificar: TButton
+      Left = 304
+      Top = 208
+      Width = 75
+      Height = 25
+      Caption = 'Verificar'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 3
+      OnClick = ButtonVerificarClick
+    end
+  end
+end

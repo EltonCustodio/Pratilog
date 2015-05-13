@@ -1,0 +1,93 @@
+object FormExpTresQuatroVariaveis: TFormExpTresQuatroVariaveis
+  Left = -8
+  Top = -8
+  Width = 1382
+  Height = 744
+  Caption = 'PratLog - Praticando Lógica com Linguagem de Programação'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object PanelExpTresQuatroVar: TPanel
+    Left = 0
+    Top = 0
+    Width = 1369
+    Height = 705
+    TabOrder = 0
+    object StringGridExpTresQuatroVariaveis: TStringGrid
+      Left = 40
+      Top = 56
+      Width = 1081
+      Height = 433
+      ColCount = 15
+      RowCount = 17
+      TabOrder = 0
+      ColWidths = (
+        64
+        64
+        64
+        64
+        64
+        64
+        64
+        64
+        64
+        64
+        64
+        64
+        64
+        64
+        158)
+    end
+    object ButtonComecar: TButton
+      Left = 520
+      Top = 536
+      Width = 113
+      Height = 25
+      Caption = 'Começar'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 1
+      OnClick = ButtonComecarClick
+    end
+    object ButtonVerificar: TButton
+      Left = 736
+      Top = 536
+      Width = 113
+      Height = 25
+      Caption = 'Verificar'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 2
+      OnClick = ButtonVerificarClick
+    end
+    object ButtonPraticar: TButton
+      Left = 616
+      Top = 576
+      Width = 161
+      Height = 25
+      Caption = 'Praticar Novamente'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 3
+      OnClick = ButtonPraticarClick
+    end
+  end
+end
